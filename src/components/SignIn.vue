@@ -11,14 +11,18 @@
                 <b-form class="form__inputs__container mx-auto pt-5">
                     <input type="email" class="form__input mb-3" placeholder="Email address">
                     <input type="password" class="form__input mt-3" placeholder="Password">
-                    <a href="" class="forgot__password w-100 d-flex justify-content-end py-1">Forgot password?</a>
+                    <a href="#" class="forgot__password w-100 d-flex justify-content-end py-1">Forgot password?</a>
                     <b-button-group vertical class="w-100 my-4">
-                        <b-button variant="primary" class="main__blue__background form__button font-weight-bold py-3">Sign in</b-button>
-                        <router-link to="" class="main__blue__color form__button font-weight-bold py-3 mx-auto">Sign up</router-link>
+                        <router-link to="/chats" :href="myPath+'/chats'" class="text-light w-100">
+                            <b-button variant="primary" class="form__button main__blue__background font-weight-bold py-3 w-100">
+                                Sign in
+                            </b-button>
+                        </router-link>
+                        <router-link to="/signup" :href="myPath+'/signup'" class="main__blue__color form__button font-weight-bold py-3 mx-auto">Sign up</router-link>
                     </b-button-group>
                 </b-form>
                 <p class="form__footer mt-5 mb-0">
-                    <a href="" class="text-dark">Term of use, Privacy policy</a>
+                    <a href="#" class="text-dark">Term of use, Privacy policy</a>
                 </p>
             </div>
         </div>
@@ -26,9 +30,15 @@
 </template>
 
 <script>
-export default {
-    name: 'login',
-}
+    import path from "../../vue.config.js"
+    export default {
+        name: 'SignIn',
+        data() {
+            return {
+                myPath: path.publicPath
+            }
+        },
+    }
 </script>
 
 <style scoped>
@@ -62,7 +72,7 @@ export default {
 
     /* F O R M ' S   T I T L E   T W O */
     .form__title2{
-        font-size: 12px;
+        font-size: 11px;
         width: 210px;
     }
 
@@ -82,45 +92,45 @@ export default {
 
     /* F O R M ' S   I N P U T S   P L A C E H O L D E R */
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
     }
     :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
         opacity:  0.5;
     }
     ::-moz-placeholder { /* Mozilla Firefox 19+ */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
         opacity:  0.5;
     }
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
     }
     ::-ms-input-placeholder { /* Microsoft Edge */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
     }
     ::placeholder { /* Most modern browsers support this now. */
-        font-size: 12px;
+        font-size: 11px;
         color: #C4C4C4;
     }
 
     /* F O R G O T   P A S S W O R D */
     .forgot__password{
         color: #C4C4C4;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     /* F O R M ' S   B U T T O N S */
     .form__button{
-        font-size: 12px;
+        font-size: 11px;
     }
 
     /* T E R M   O F   U S E ,   P R I V A C Y   P O L I C Y */
     .form__footer{
-        font-size: 12px;
+        font-size: 11px;
     }
 </style>
